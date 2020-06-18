@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'package:flutter/services.dart';
 import 'package:flutter/material.dart';
-import 'package:orientation/orientation.dart';
+// import 'package:orientation/orientation.dart';
 import 'package:video_player/video_player.dart';
 import 'package:screen/screen.dart';
 import 'package:connectivity/connectivity.dart';
@@ -333,9 +333,11 @@ class _AwsomeVideoPlayerState extends State<AwsomeVideoPlayer>
   /// 点击全屏或取消
   void toggleFullScreen() {
     if (fullscreened) {
-      OrientationPlugin.forceOrientation(DeviceOrientation.portraitUp);
+      SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
+      // OrientationPlugin.forceOrientation(DeviceOrientation.portraitUp);
     } else {
-      OrientationPlugin.forceOrientation(DeviceOrientation.landscapeRight);
+      SystemChrome.setPreferredOrientations([DeviceOrientation.landscapeLeft]);
+      // OrientationPlugin.forceOrientation(DeviceOrientation.landscapeRight);
     }
   }
 
